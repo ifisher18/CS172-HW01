@@ -17,11 +17,13 @@ int doubleInt (int x);
 //int add (int a, int b);
 void addone (int &k);
 const int ARRAY_SIZE = 5;
+void Blackcat (double x[], int size);
+void Alien (double g[], int size);
 
 // EX01_01
 /////////////////////////////////////////////
 void ex02 () {
-    cout << "EX01_01" << endl;
+    cout << "*********** EX01_01*********" << endl;
     cout << " " << endl;
     
     // part a.
@@ -85,19 +87,16 @@ void ex02 () {
         cout << "The outside temperature is not greater than 90 degrees Fahrenheit, so the shelf life remains at " << Shelf_Life << "." << endl;
     }
     cout << " " << endl;
-    
-    
 }
 
 // EX01_02
 /////////////////////////
 void ex03 () {
-    cout << "EX01_02" << endl;
+    cout << "********* EX01_02 *********" << endl;
     cout << " " << endl;
     
     // part a.
     double areaOfsquare;
-    
     cout << "Enter the area of a square: ";
     cin >> areaOfsquare;
     double SideLengthofSquare;
@@ -136,7 +135,7 @@ void ex03 () {
 // EX01_03
 ////////////////////////
 void ex04 () {
-    cout << "EX01_03" << endl;
+    cout << "********* EX01_03 *********" << endl;
     cout << " " << endl;
     
     // part a.
@@ -148,7 +147,7 @@ void ex04 () {
         cin >> guess;
         break;
     }
-
+    cout << "The value you entered was: " << guess << endl;
     cout << " " << endl;
     
     // part b.
@@ -156,8 +155,8 @@ void ex04 () {
     for (int i = 0; i < guess; i++) {
         sum = sum + (i * i * i);
     }
-    cout << sum << endl;
-    cout << " " << endl;
+    cout << "The sum of the cubes from 1 to the number given is: " << sum << endl;
+    cout << endl;
     
     // part c.
     int i = 1;
@@ -165,16 +164,20 @@ void ex04 () {
         cout << " * " << endl;
         i++;
     } while (i <= guess);
+    cout << endl;
     
     // part d.
+    cout << "The even numbers from 0 to 40 are: " << endl;
     int x = 0;
     for (int i = 0; i < 20; i++) {
         x += 2;
         cout << x << endl;
     }
+    cout << endl;
     
     // part e.
     doubleInt(guess);
+    cout << endl;
     
     // part f.
     int num1;
@@ -190,6 +193,7 @@ void ex04 () {
 // EX01_04
 //////////////////////////
 void ex05 () {
+    cout << "EX01_04" << endl;
     
     // part a.
     
@@ -198,6 +202,7 @@ void ex05 () {
     for (int i = 0; i < ARRAY_SIZE; i++) {
         cin >> myList[i];
     }
+    cout << endl;
     
     // part b.
     
@@ -206,40 +211,43 @@ void ex05 () {
     for (a = 0; a < ARRAY_SIZE; a++) {
         sum += myList[a];
     }
-    cout << sum << endl;
+    cout << "The sum of the array is: " << sum << endl;
     
     // for product
     int p, product = 1;
     for (p = 0; p < ARRAY_SIZE; p++) {
         product *= myList[p];
     }
-    cout << product << endl;
+    cout << "The product of the array is: " << product << endl;
     
     // part c.
-    
+    Blackcat(myList, ARRAY_SIZE);
+    cout << endl;
     
     // part d.
-    
+    Alien(myList, ARRAY_SIZE);
+    cout << endl;
     
 }
 
-// for EX1_03 part e.
+// function for EX1_03 part e.
 int doubleInt (int x) {
     return (2 * x);
 }
 
-// for EX1_03 part g.
+// fucntion for EX1_03 part g.
 void addone (int &k) {
     k++;
 }
 
-// part c. EX1_04
+// function for EX1_04 part c.
 void Blackcat (double x[], int size) {
     for (int i = 0; i < size; i++) {
         cout << x[i] << endl;
     }
 }
 
+// function for EX1_04 part d.
 void Alien (double g[], int size) {
     int value;
     cout << "Enter a value: ";
@@ -254,11 +262,9 @@ void Alien (double g[], int size) {
 }
 
 int main () {
-    
-    
-    //ex02 ();
-    //ex03 ();
-    //ex04 ();
-    ex05 ();
+    //ex02 (); // calls function ex02
+    //ex03 (); // calls function ex03
+    ex04 (); // calls function ex04
+    ex05 (); // calls function ex05
     return 0;
 }
