@@ -10,6 +10,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <cmath>
+#include <string>
 
 using namespace std;
 
@@ -17,8 +18,9 @@ int doubleInt(int x);
 //int add (int a, int b);
 void addone(int &k);
 const int ARRAY_SIZE = 5;
-void Blackcat(double x[], int size);
-void Alien(double g[], int size);
+void Blackcat(double x[], int size); // function used below
+void Alien(double g[], int size); // function used below
+int add(int num1, int num2);
 
 // EX01_01
 /////////////////////////////////////////////
@@ -139,6 +141,7 @@ void ex04() {
 	cout << " " << endl;
 
 	// part a.
+
 	int guess;
 	cout << "Enter a value between 1 and 10: ";
 	cin >> guess;
@@ -152,7 +155,7 @@ void ex04() {
 
 	// part b.
 	int sum = 0;
-	for (int i = 0; i < guess; i++) {
+	for (int i = 0; i <= guess; i++) {
 		sum = sum + (i * i * i);
 	}
 	cout << "The sum of the cubes from 1 to the number given is: " << sum << endl;
@@ -176,24 +179,25 @@ void ex04() {
 	cout << endl;
 
 	// part e.
-	doubleInt(guess);
+	cout << doubleInt(guess);
 	cout << endl;
 
 	// part f.
-	int num1;
-	int num2;
-	cout << "Enter 2 integers: ";
-	cin >> num1 >> num2;
-	//add (num1, num2);
+	int num1 = rand();
+	int num2 = rand();
+	cout << "The two random numbers are: " << num1 << "and " << num2 << endl;
+	
+	cout << "The sum of these two numbers is: " << add(num1, num2);
 
 	// part g.
 	addone(guess);
+	cout << endl;
 }
 
 // EX01_04
 //////////////////////////
 void ex05() {
-	cout << "EX01_04" << endl;
+	cout << "********* EX01_04 **********" << endl;
 
 	// part a.
 
@@ -230,6 +234,12 @@ void ex05() {
 
 }
 
+int add (int g, int h)
+{
+	int sum = (g + h);
+	return sum;
+}
+
 // function for EX1_03 part e.
 int doubleInt(int x) {
 	return (2 * x);
@@ -249,17 +259,24 @@ void Blackcat(double x[], int size) {
 
 // function for EX1_04 part d.
 void Alien(double g[], int size) {
+	bool check = false;
 	int value;
 	cout << "Enter a value: ";
 	cin >> value;
 	for (int i = 0; i < size; i++) {
 		if (value == g[i]) {
-			cout << "The array contains the entered value!" << endl;
-			return;
+			check = true;
 		}
+	} 
+	if (check == true)
+	{
+		cout << "The value entered is in the array" << endl;
 	}
-	cout << "The array does not contain the entered value." << endl;
-	///
+	else
+	{
+		cout << "The value entered is not in the array" << endl;
+	}
+	
 }
 
 int main() {
@@ -267,5 +284,4 @@ int main() {
 	//ex03 (); // calls function ex03
 	ex04(); // calls function ex04
 	ex05(); // calls function ex05
-	return 0;
 }
