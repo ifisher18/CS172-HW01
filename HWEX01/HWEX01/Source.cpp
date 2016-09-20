@@ -193,7 +193,7 @@ void ex04() {
 
 	cout << "The even numbers from 0 to 40 are: " << endl;
 	int x = 0;
-	for (int i = 0; i <= 20; i++) {
+	for (int i = 0; i < 20; i++) {
 		x += 2; // incraments x by 2
 		cout << x << endl; // couts the x value for each interation of for loop
 	}
@@ -223,6 +223,7 @@ void ex04() {
 
 void ex05() {
 	cout << "******** EX01_04 *********" << endl;
+	cout << endl;
 
 	// part a.
 
