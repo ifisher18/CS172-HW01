@@ -207,7 +207,7 @@ void ex04() {
 
 	int num1 = rand(); // creates rand number
 	int num2 = rand(); // creates rand number
-	cout << "The two random numbers are: " << num1 << "and " << num2 << "." << endl;
+	cout << "The two random numbers are: " << num1 << " and " << num2 << "." << endl;
 	cout << "The sum of these two numbers is: " << add(num1, num2) << "." << endl;
 	cout << endl;
 
@@ -308,7 +308,7 @@ void Alien(double g[], int size) {
 	}
 	else
 	{
-		cout << "The value entered is not in the array" << endl;
+		cout << "**The value entered is not in the array" << endl;
 	}
 }
 
